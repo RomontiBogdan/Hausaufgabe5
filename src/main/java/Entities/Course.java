@@ -9,7 +9,7 @@ public class Course {
     private Teacher teacher;
     private List<Student> studentsEnrolled;
     private int credits;
-    private int maxStudends;
+    private int maxStudendts;
 
     public Course(int courseId, String name, Teacher teacher, List<Student> studentsEnrolled, int credits, int maxStudents) {
         this.courseId = courseId;
@@ -17,7 +17,7 @@ public class Course {
         this.teacher = teacher;
         this.studentsEnrolled = studentsEnrolled;
         this.credits = credits;
-        this.maxStudends = maxStudents;
+        this.maxStudendts = maxStudents;
     }
 
     public Course() {
@@ -26,7 +26,7 @@ public class Course {
         this.teacher = new Teacher();
         this.studentsEnrolled = new ArrayList<>();
         this.credits = 0;
-        this.maxStudends = 0;
+        this.maxStudendts = 0;
     }
 
     public int getCourseId() {
@@ -69,11 +69,11 @@ public class Course {
         this.credits = credits;
     }
 
-    public int getMaxStudends() {
-        return maxStudends;
+    public int getMaxStudendts() {
+        return maxStudendts;
     }
 
-    public void setMaxStudends(int maxStudends) {
-        this.maxStudends = maxStudends;
+    public void setMaxStudendts(int maxStudendts) {
+        this.maxStudendts = maxStudendts;
     }
 }

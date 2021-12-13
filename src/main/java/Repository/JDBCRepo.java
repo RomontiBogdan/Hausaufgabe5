@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JDBCRepo {
-    private static String dbhost = "jdbc:mysql://localhost:3306/hausaufgabe5";
-    private static String username = "root";
-    private static String password = "1234";
+    private static final String dbhost = "jdbc:mysql://localhost:3306/hausaufgabe5?useSSL=false";
+    private static final String username = "root";
+    private static final String password = "ABcd1234!";
     private static Connection conn;
 
     @SuppressWarnings("finally")
