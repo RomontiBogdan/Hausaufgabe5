@@ -14,6 +14,11 @@ public class StudentRepoJDBC implements ICrudRepository<Student>{
     private static Statement statement;
     private static ResultSet results;
 
+    /**
+     * Adds student to repo
+     * @param student
+     * @return added student
+     */
     @Override
     public Student create(Student student) {
         try(Connection conn = JDBCRepo.createDBconnection()){
@@ -29,6 +34,10 @@ public class StudentRepoJDBC implements ICrudRepository<Student>{
         return student;
     }
 
+    /**
+     * Gets all the records from repo
+     * @return list of records
+     */
     @Override
     public List getAll() {
         String sql_select = "Select * From student";
@@ -60,6 +69,11 @@ public class StudentRepoJDBC implements ICrudRepository<Student>{
         return null;
     }
 
+    /**
+     * Updates given student from repo
+     * @param student
+     * @return updated teacher
+     */
     @Override
     public Student update(Student student) {
         try(Connection conn = JDBCRepo.createDBconnection()){
@@ -76,6 +90,10 @@ public class StudentRepoJDBC implements ICrudRepository<Student>{
         return null;
     }
 
+    /**
+     * Deletes given student from repo
+     * @param student
+     */
     @Override
     public void delete(Student student) {
         try(Connection conn = JDBCRepo.createDBconnection()){

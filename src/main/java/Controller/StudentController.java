@@ -13,22 +13,43 @@ public class StudentController {
         this.repo = repo;
     }
 
+    /**
+     * Adds student to repo
+     * @param student
+     */
     public void addStudent(Student student){
         this.repo.create(student);
     }
 
+    /**
+     * Updates student from repo
+     * @param student
+     */
     public void updateStudent(Student student){
         repo.update(student);
     }
 
+    /**
+     * Removes student from repo
+     * @param student
+     */
     public void removeStudent(Student student){
         repo.delete(student);
     }
 
+    /**
+     * Returns all records from repo
+     * @return list of records
+     */
     public List<Student> getAll(){
         return repo.getAll();
     }
 
+    /**
+     * Returns student with the given id
+     * @param id
+     * @return student with the given id
+     */
     public Student getById(int id){
         List<Student> studentList = repo.getAll();
         for(Student student : studentList){

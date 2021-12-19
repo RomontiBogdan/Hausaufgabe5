@@ -1,9 +1,7 @@
 package Repository;
 
 import Entities.Enrollment;
-import Entities.Teacher;
 
-import java.nio.file.WatchEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,6 +13,11 @@ public class EnrolledRepoJDBC implements ICrudRepository<Enrollment>{
     private static Statement statement;
     private static ResultSet results;
 
+    /**
+     * Adds enrollment to repo
+     * @param enrollment
+     * @return added enrollment
+     */
     @Override
     public Enrollment create(Enrollment enrollment) {
         try(Connection conn = JDBCRepo.createDBconnection()){
@@ -30,6 +33,10 @@ public class EnrolledRepoJDBC implements ICrudRepository<Enrollment>{
         return enrollment;
     }
 
+    /**
+     * Gets all the records from repo
+     * @return list of records
+     */
     @Override
     public List<Enrollment> getAll() {
         String sql_select = "Select * From course-student";
@@ -59,6 +66,11 @@ public class EnrolledRepoJDBC implements ICrudRepository<Enrollment>{
         return null;
     }
 
+    /**
+     * Updates given teacher from repo
+     * @param enrollment
+     * @return updated enrollment
+     */
     @Override
     public Enrollment update(Enrollment enrollment) {
         try(Connection conn = JDBCRepo.createDBconnection()){
@@ -73,6 +85,10 @@ public class EnrolledRepoJDBC implements ICrudRepository<Enrollment>{
         return null;
     }
 
+    /**
+     * Deletes given teacher from repo
+     * @param enrollment
+     */
     @Override
     public void delete(Enrollment enrollment) {
         try(Connection conn = JDBCRepo.createDBconnection()){
